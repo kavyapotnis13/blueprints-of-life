@@ -1,0 +1,357 @@
+:root {
+  --paper: #ecebe4;
+  --ink: #15171a;
+  --graphite: #6e6a62;
+  --ink-blue: #1f3a68;
+  --rule: #cdc6b4;
+  --max-width: 52rem;
+  --reading-width: 38rem;
+
+  --font-serif: "Newsreader", "Iowan Old Style", Palatino, Georgia, serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+* { box-sizing: border-box; }
+
+html { font-size: 17px; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-variation-settings: "opsz" 16;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 4rem;
+}
+
+/* Utility: monospace caps label — used for figure numbers, dates, eyebrows */
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--graphite);
+  display: block;
+}
+
+/* Header */
+header.site {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0 1rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+header.site .brand {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+header.site nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+header.site nav a {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--graphite);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+header.site nav a:hover { color: var(--ink-blue); }
+
+/* Hero: figure framed by corner dimension brackets */
+.hero {
+  margin: 2rem 0 4.5rem;
+}
+
+.hero-figure {
+  position: relative;
+  padding: 5rem 1.5rem 4rem;
+  min-height: 400px;
+  text-align: center;
+  background-image: url('../images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  color: var(--paper);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-figure::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(15,17,20,0.30) 0%, rgba(15,17,20,0.58) 100%);
+  pointer-events: none;
+}
+
+.hero-figure > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-figure .label    { color: rgba(246, 243, 234, 0.78); }
+.hero-figure .hero-title { color: var(--paper); }
+.hero-figure .tagline  { color: rgba(246, 243, 234, 0.95); }
+.hero-figure .bracket  { border-color: rgba(246, 243, 234, 0.92); }
+
+.bracket {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border: 0 solid var(--ink);
+  animation: bracket-in 0.5s ease-out both;
+}
+
+.bracket-tl { top: 0; left: 0;     border-top-width: 1px; border-left-width: 1px;  animation-delay: 0.15s; }
+.bracket-tr { top: 0; right: 0;    border-top-width: 1px; border-right-width: 1px; animation-delay: 0.30s; }
+.bracket-br { bottom: 0; right: 0; border-bottom-width: 1px; border-right-width: 1px; animation-delay: 0.45s; }
+.bracket-bl { bottom: 0; left: 0;  border-bottom-width: 1px; border-left-width: 1px;  animation-delay: 0.60s; }
+
+@keyframes bracket-in {
+  from { width: 0; height: 0; opacity: 0; }
+  to   { width: 22px; height: 22px; opacity: 1; }
+}
+
+.hero-figure .label {
+  margin-bottom: 1.75rem;
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-variation-settings: "opsz" 72;
+  font-weight: 500;
+  font-size: clamp(1.55rem, 5.5vw, 2.55rem);
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  margin: 0;
+  text-indent: 0.32em; /* trailing tracking pushes the line right; this offsets it for optical centering */
+  line-height: 1.15;
+}
+
+.tagline {
+  font-family: var(--font-serif);
+  font-variation-settings: "opsz" 24;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: var(--ink);
+  max-width: 26rem;
+  margin: 1.85rem auto 0;
+  line-height: 1.4;
+}
+
+/* Eyebrow heading for sections like "Recent episodes" */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0 0 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* Post list */
+.post-list { list-style: none; padding: 0; margin: 0; }
+
+.post-list li {
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.post-list li:last-child { border-bottom: 0; }
+
+.post-list .label { margin-bottom: 0.6rem; }
+
+.post-list a {
+  font-family: var(--font-serif);
+  font-variation-settings: "opsz" 32;
+  font-size: 1.45rem;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  line-height: 1.25;
+  transition: color 0.15s ease;
+}
+
+.post-list a:hover { color: var(--ink-blue); }
+
+.post-list .excerpt {
+  color: var(--graphite);
+  margin: 0.6rem 0 0;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+/* Episode grid */
+.episode-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2.5rem 1.5rem;
+}
+
+.episode-card {
+  display: block;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.episode-cover {
+  aspect-ratio: 1 / 1;
+  background: var(--ink-blue);
+  color: var(--paper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  font-family: var(--font-serif);
+  font-variation-settings: "opsz" 72;
+  font-size: clamp(3rem, 8vw, 4.5rem);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  transition: background 0.2s ease;
+}
+
+.episode-card:hover .episode-cover { background: var(--ink); }
+.episode-card:hover .episode-title { color: var(--ink-blue); }
+
+.episode-card .label { margin-bottom: 0.4rem; }
+
+.episode-title {
+  font-family: var(--font-serif);
+  font-variation-settings: "opsz" 32;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.25;
+  margin: 0;
+  transition: color 0.15s ease;
+}
+
+.episode-card--placeholder { opacity: 0.4; cursor: default; }
+.episode-card--placeholder:hover .episode-cover { background: var(--ink-blue); }
+.episode-card--placeholder:hover .episode-title { color: var(--ink); }
+
+/* Article body */
+article .label { margin-bottom: 0.85rem; }
+
+article h1 {
+  font-family: var(--font-serif);
+  font-variation-settings: "opsz" 72;
+  font-size: clamp(1.85rem, 5vw, 2.6rem);
+  font-weight: 500;
+  line-height: 1.15;
+  margin: 0 0 2.5rem;
+  max-width: var(--reading-width);
+}
+
+article h2 {
+  font-family: var(--font-serif);
+  font-variation-settings: "opsz" 36;
+  font-size: 1.35rem;
+  font-weight: 500;
+  margin: 2.5rem 0 0.85rem;
+}
+
+article p, article ul, article ol {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin: 0 0 1.2rem;
+  max-width: var(--reading-width);
+}
+
+article a { color: var(--ink-blue); }
+
+article em, article i { font-style: italic; }
+
+article img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2rem 0;
+}
+
+article hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 3rem 0;
+}
+
+/* Spotify episode as a numbered figure */
+figure.embed {
+  margin: 2.5rem 0;
+}
+
+figure.embed iframe {
+  display: block;
+  width: 100%;
+  border: 0;
+}
+
+figure.embed figcaption {
+  margin-top: 0.75rem;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--graphite);
+}
+
+/* Footer (publication colophon) */
+footer.site {
+  margin-top: 5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--graphite);
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bracket { animation: none; }
+  * { transition: none !important; }
+}
+
+@media (max-width: 30rem) {
+  header.site { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
+  header.site nav { gap: 1.25rem; }
+  .hero { margin: 1rem 0 3rem; }
+  .hero-figure { padding: 2.5rem 1rem 2rem; }
+}
