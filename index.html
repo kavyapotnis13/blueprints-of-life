@@ -16,6 +16,7 @@
       <a href="index.html" class="brand">Blueprints of Life</a>
       <nav>
         <a href="episodes.html">Episodes</a>
+        <a href="articles.html">Articles</a>
         <a href="about.html">About</a>
       </nav>
     </header>
@@ -33,14 +34,37 @@
     </section>
 
     <main>
-      <h2 class="eyebrow">Recent figures</h2>
-      <ul class="post-list">
-        <li>
-          <span class="label">Fig. 01 — Ep 01 · 28 Jun 2026</span>
-          <a href="posts/hello-world.html">Hello, world</a>
-          <p class="excerpt">Why I started this blog, and the first podcast episode.</p>
-        </li>
-      </ul>
+      <section class="featured">
+        <header class="section-head">
+          <h2 class="eyebrow">Latest episode</h2>
+          <a href="episodes.html" class="all-link">All episodes &rarr;</a>
+        </header>
+        <a href="posts/hello-world.html" class="feature-card feature-card--episode">
+          <div class="feature-card__media episode-cover"><span>01</span></div>
+          <div class="feature-card__body">
+            <span class="label">Fig. 01 — Ep 01 · 28 Jun 2026</span>
+            <h3>Hello, world</h3>
+            <p>Why I started this blog, and the first podcast episode.</p>
+            <span class="read-link">Listen &rarr;</span>
+          </div>
+        </a>
+      </section>
+
+      <section class="featured">
+        <header class="section-head">
+          <h2 class="eyebrow">Latest article</h2>
+          <a href="articles.html" class="all-link">All articles &rarr;</a>
+        </header>
+        <a href="posts/sample-article.html" class="feature-card feature-card--article">
+          <div class="feature-card__media article-card__cover"><span>BL</span></div>
+          <div class="feature-card__body">
+            <span class="label">28 Jun 2026</span>
+            <h3>A placeholder article</h3>
+            <p>The Articles section is where written essays live &mdash; longer takes on biotech news, or anything that benefits from text more than audio.</p>
+            <span class="read-link">Read &rarr;</span>
+          </div>
+        </a>
+      </section>
     </main>
 
     <footer class="site">

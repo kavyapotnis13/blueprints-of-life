@@ -385,6 +385,142 @@ footer.site {
   * { transition: none !important; }
 }
 
+/* Section head: eyebrow on left, "All X" link on right, hairline rule */
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.section-head .eyebrow {
+  margin: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.all-link {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--graphite);
+  white-space: nowrap;
+  transition: color 0.15s ease;
+}
+
+.all-link:hover { color: var(--ink-blue); }
+
+/* Featured section on home — one per content type, full width with a horizontal card */
+.featured { margin-bottom: 4rem; }
+.featured:last-child { margin-bottom: 0; }
+
+.feature-card {
+  display: grid;
+  grid-template-columns: 12rem 1fr;
+  gap: 2rem;
+  align-items: start;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.feature-card__media {
+  aspect-ratio: 1 / 1;
+  width: 12rem;
+  margin: 0;
+}
+
+.feature-card__body { padding-top: 0.4rem; }
+.feature-card__body .label { margin-bottom: 0.75rem; }
+
+.feature-card__body h3 {
+  font-family: var(--font-serif);
+  font-variation-settings: "opsz" 48;
+  font-size: 1.7rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0 0 0.75rem;
+  transition: color 0.15s ease;
+}
+
+.feature-card__body p {
+  font-family: var(--font-serif);
+  font-variation-settings: "opsz" 18;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--graphite);
+  margin: 0 0 1rem;
+  max-width: 30rem;
+}
+
+.read-link {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-blue);
+}
+
+.feature-card:hover h3 { color: var(--ink-blue); }
+.feature-card:hover .episode-cover,
+.feature-card:hover .article-card__cover { filter: brightness(1.12); }
+
+/* Article grid (articles.html) — visually rhymes with episode grid but uses
+   a moss-green cover with a serif "BL" monogram instead of solid plates.
+   Swap the .article-card__cover div for an <img class="article-card__cover">
+   when real cover art is available. */
+.article-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2.5rem 1.5rem;
+}
+
+.article-card {
+  display: block;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.article-card__cover {
+  aspect-ratio: 1 / 1;
+  background: var(--moss);
+  color: var(--paper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  font-family: var(--font-serif);
+  font-variation-settings: "opsz" 72;
+  font-size: clamp(2rem, 7vw, 3rem);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  transition: filter 0.2s ease;
+}
+
+.article-card:hover .article-card__cover { filter: brightness(1.12); }
+.article-card:hover .article-card__title { color: var(--ink-blue); }
+
+.article-card .label { margin-bottom: 0.4rem; }
+
+.article-card__title {
+  font-family: var(--font-serif);
+  font-variation-settings: "opsz" 32;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.25;
+  margin: 0;
+  transition: color 0.15s ease;
+}
+
 /* Collapse marginalia grids on narrow screens */
 @media (max-width: 38rem) {
   .post-list li,
@@ -403,6 +539,10 @@ footer.site {
   .post-list a,
   .post-list .excerpt,
   article > h1 { grid-column: 1; grid-row: auto; }
+
+  .feature-card { grid-template-columns: 1fr; gap: 1.25rem; }
+  .feature-card__media { width: 100%; max-width: 16rem; }
+  .section-head { flex-wrap: wrap; gap: 0.5rem 1rem; }
 }
 
 @media (max-width: 30rem) {
