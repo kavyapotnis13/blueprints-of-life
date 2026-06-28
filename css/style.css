@@ -3,6 +3,7 @@
   --ink: #15171a;
   --graphite: #6e6a62;
   --ink-blue: #1f3a68;
+  --moss: #2a3826;
   --rule: #cdc6b4;
   --max-width: 52rem;
   --reading-width: 38rem;
@@ -178,19 +179,32 @@ header.site nav a:hover { color: var(--ink-blue); }
   border-bottom: 1px solid var(--rule);
 }
 
-/* Post list */
+/* Post list — marginalia layout: label in gutter, content in right column */
 .post-list { list-style: none; padding: 0; margin: 0; }
 
 .post-list li {
-  padding: 1.75rem 0;
+  padding: 2rem 0;
   border-bottom: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  column-gap: 2.5rem;
+  row-gap: 0.5rem;
+  align-items: start;
 }
 
 .post-list li:last-child { border-bottom: 0; }
 
-.post-list .label { margin-bottom: 0.6rem; }
+.post-list .label {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  text-align: right;
+  padding-top: 0.55rem;
+  margin: 0;
+}
 
 .post-list a {
+  grid-column: 2;
+  grid-row: 1;
   font-family: var(--font-serif);
   font-variation-settings: "opsz" 32;
   font-size: 1.45rem;
@@ -204,10 +218,13 @@ header.site nav a:hover { color: var(--ink-blue); }
 .post-list a:hover { color: var(--ink-blue); }
 
 .post-list .excerpt {
+  grid-column: 2;
+  grid-row: 2;
   color: var(--graphite);
-  margin: 0.6rem 0 0;
+  margin: 0;
   font-size: 1rem;
   line-height: 1.55;
+  max-width: var(--reading-width);
 }
 
 /* Episode grid */
@@ -242,7 +259,12 @@ header.site nav a:hover { color: var(--ink-blue); }
   transition: background 0.2s ease;
 }
 
-.episode-card:hover .episode-cover { background: var(--ink); }
+/* Plate color cycling — small Penguin Modern Classics-style series identity */
+.episode-grid > li:nth-child(3n+1) .episode-cover { background: var(--ink-blue); }
+.episode-grid > li:nth-child(3n+2) .episode-cover { background: var(--moss); }
+.episode-grid > li:nth-child(3n+3) .episode-cover { background: var(--ink); }
+
+.episode-card:hover .episode-cover { filter: brightness(1.18); }
 .episode-card:hover .episode-title { color: var(--ink-blue); }
 
 .episode-card .label { margin-bottom: 0.4rem; }
@@ -258,13 +280,30 @@ header.site nav a:hover { color: var(--ink-blue); }
 }
 
 .episode-card--placeholder { opacity: 0.4; cursor: default; }
-.episode-card--placeholder:hover .episode-cover { background: var(--ink-blue); }
+.episode-card--placeholder:hover .episode-cover { filter: none; }
 .episode-card--placeholder:hover .episode-title { color: var(--ink); }
 
-/* Article body */
-article .label { margin-bottom: 0.85rem; }
+/* Article body — marginalia grid: label in gutter, body in right column */
+article {
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  column-gap: 2.5rem;
+  align-items: start;
+}
 
-article h1 {
+article > * { grid-column: 2; }
+
+article > .label {
+  grid-column: 1;
+  grid-row: 1;
+  text-align: right;
+  padding-top: 0.85rem;
+  margin: 0;
+}
+
+article > h1 {
+  grid-column: 2;
+  grid-row: 1;
   font-family: var(--font-serif);
   font-variation-settings: "opsz" 72;
   font-size: clamp(1.85rem, 5vw, 2.6rem);
@@ -328,7 +367,7 @@ figure.embed figcaption {
   color: var(--graphite);
 }
 
-/* Footer (publication colophon) */
+/* Footer */
 footer.site {
   margin-top: 5rem;
   padding-top: 1.25rem;
@@ -338,10 +377,7 @@ footer.site {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--graphite);
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
+  text-align: center;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -349,9 +385,29 @@ footer.site {
   * { transition: none !important; }
 }
 
+/* Collapse marginalia grids on narrow screens */
+@media (max-width: 38rem) {
+  .post-list li,
+  article {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+  }
+  .post-list .label,
+  article > .label {
+    grid-column: 1;
+    grid-row: auto;
+    text-align: left;
+    padding-top: 0;
+    margin-bottom: 0.5rem;
+  }
+  .post-list a,
+  .post-list .excerpt,
+  article > h1 { grid-column: 1; grid-row: auto; }
+}
+
 @media (max-width: 30rem) {
   header.site { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
   header.site nav { gap: 1.25rem; }
   .hero { margin: 1rem 0 3rem; }
-  .hero-figure { padding: 2.5rem 1rem 2rem; }
+  .hero-figure { padding: 2.5rem 1rem 2rem; min-height: 320px; }
 }
