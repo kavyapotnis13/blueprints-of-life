@@ -2,9 +2,10 @@
   --paper: #ecebe4;
   --ink: #15171a;
   --graphite: #6e6a62;
-  --ink-blue: #1f3a68;
-  --moss: #2a3826;
+  --indigo: #2e3e73;
+  --periwinkle: #5d70b8;
   --rule: #cdc6b4;
+  --brand-gradient: linear-gradient(180deg, #5d70b8 0%, #2e3e73 100%);
   --max-width: 52rem;
   --reading-width: 38rem;
 
@@ -101,7 +102,7 @@ header.site .brand {
   transition: background 0.15s ease;
 }
 
-.menu-toggle:hover span { background: var(--ink-blue); }
+.menu-toggle:hover span { background: var(--indigo); }
 
 /* Hero — full-bleed photo with centered figure on top */
 .hero {
@@ -123,7 +124,7 @@ header.site .brand {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(15,17,20,0.30) 0%, rgba(15,17,20,0.58) 100%);
+  background: linear-gradient(to bottom, rgba(46,62,115,0.32) 0%, rgba(46,62,115,0.65) 100%);
   pointer-events: none;
 }
 
@@ -242,7 +243,7 @@ header.site .brand {
   transition: color 0.15s ease;
 }
 
-.post-list a:hover { color: var(--ink-blue); }
+.post-list a:hover { color: var(--indigo); }
 
 .post-list .excerpt {
   grid-column: 2;
@@ -272,7 +273,7 @@ header.site .brand {
 
 .episode-cover {
   aspect-ratio: 1 / 1;
-  background: var(--ink-blue);
+  background: var(--indigo);
   color: var(--paper);
   display: flex;
   align-items: center;
@@ -287,8 +288,8 @@ header.site .brand {
 }
 
 /* Plate color cycling — small Penguin Modern Classics-style series identity */
-.episode-grid > li:nth-child(3n+1) .episode-cover { background: var(--ink-blue); }
-.episode-grid > li:nth-child(3n+2) .episode-cover { background: var(--moss); }
+.episode-grid > li:nth-child(3n+1) .episode-cover { background: var(--indigo); }
+.episode-grid > li:nth-child(3n+2) .episode-cover { background: var(--periwinkle); }
 .episode-grid > li:nth-child(3n+3) .episode-cover { background: var(--ink); }
 
 .episode-card:hover .episode-cover { filter: brightness(1.18); }
@@ -309,7 +310,7 @@ img.episode-cover {
   display: block;
   margin: 0 0 2.5rem;
 }
-.episode-card:hover .episode-title { color: var(--ink-blue); }
+.episode-card:hover .episode-title { color: var(--indigo); }
 
 .episode-card .label { margin-bottom: 0.4rem; }
 
@@ -372,7 +373,7 @@ article p, article ul, article ol {
   max-width: var(--reading-width);
 }
 
-article a { color: var(--ink-blue); }
+article a { color: var(--indigo); }
 
 article em, article i { font-style: italic; }
 
@@ -436,12 +437,13 @@ footer.site .site-inner {
   right: 0;
   bottom: 0;
   width: min(320px, 84vw);
-  background: var(--paper);
+  background: var(--brand-gradient);
+  color: var(--paper);
   transform: translateX(100%);
   transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 100;
   padding: 1.5rem 1.75rem 2.5rem;
-  box-shadow: -4px 0 30px rgba(15, 17, 20, 0.08);
+  box-shadow: -4px 0 30px rgba(15, 17, 20, 0.18);
   display: flex;
   flex-direction: column;
   overflow-y: auto;
@@ -458,13 +460,14 @@ body.sidebar-open .sidebar { transform: translateX(0); }
   cursor: pointer;
   padding: 0.25rem 0.5rem;
   margin: 0 -0.5rem 1.25rem 0;
-  color: var(--ink);
+  color: var(--paper);
   font-family: var(--font-serif);
   font-weight: 300;
-  transition: color 0.15s ease;
+  transition: opacity 0.15s ease;
+  opacity: 0.85;
 }
 
-.sidebar__close:hover { color: var(--ink-blue); }
+.sidebar__close:hover { opacity: 1; }
 
 .sidebar__nav { display: flex; flex-direction: column; }
 
@@ -473,14 +476,18 @@ body.sidebar-open .sidebar { transform: translateX(0); }
   font-variation-settings: "opsz" 40;
   font-size: 1.55rem;
   font-weight: 500;
-  color: var(--ink);
+  color: var(--paper);
   text-decoration: none;
   padding: 0.9rem 0;
-  border-bottom: 1px solid var(--rule);
-  transition: color 0.15s ease;
+  border-bottom: 1px solid rgba(246, 243, 234, 0.18);
+  transition: opacity 0.15s ease, padding-left 0.2s ease;
+  opacity: 0.92;
 }
 
-.sidebar__nav a:hover { color: var(--ink-blue); }
+.sidebar__nav a:hover {
+  opacity: 1;
+  padding-left: 0.4rem;
+}
 
 .sidebar-backdrop {
   position: fixed;
@@ -533,7 +540,7 @@ body.sidebar-open { overflow: hidden; }
   transition: color 0.15s ease;
 }
 
-.all-link:hover { color: var(--ink-blue); }
+.all-link:hover { color: var(--indigo); }
 
 /* Featured section on home — one per content type, full width with a horizontal card */
 .featured { margin-bottom: 4rem; }
@@ -583,10 +590,10 @@ body.sidebar-open { overflow: hidden; }
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--ink-blue);
+  color: var(--indigo);
 }
 
-.feature-card:hover h3 { color: var(--ink-blue); }
+.feature-card:hover h3 { color: var(--indigo); }
 .feature-card:hover .episode-cover,
 .feature-card:hover .article-card__cover { filter: brightness(1.12); }
 
@@ -607,12 +614,12 @@ body.sidebar-open { overflow: hidden; }
   text-decoration: none;
   color: var(--ink);
   padding: 1.25rem 0 0;
-  border-top: 2px solid var(--moss);
+  border-top: 2px solid var(--periwinkle);
   transition: border-color 0.15s ease;
 }
 
-.article-card:hover { border-top-color: var(--ink-blue); }
-.article-card:hover .article-card__title { color: var(--ink-blue); }
+.article-card:hover { border-top-color: var(--indigo); }
+.article-card:hover .article-card__title { color: var(--indigo); }
 
 .article-card .label { margin-bottom: 0.55rem; }
 
@@ -639,12 +646,12 @@ body.sidebar-open { overflow: hidden; }
 .feature-card--article {
   grid-template-columns: 1fr;
   gap: 0;
-  border-top: 2px solid var(--moss);
+  border-top: 2px solid var(--periwinkle);
   padding-top: 1.75rem;
   transition: border-color 0.15s ease;
 }
 
-.feature-card--article:hover { border-top-color: var(--ink-blue); }
+.feature-card--article:hover { border-top-color: var(--indigo); }
 .feature-card--article .feature-card__body { padding-top: 0; }
 
 /* Collapse marginalia grids on narrow screens */
