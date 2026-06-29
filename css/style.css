@@ -471,55 +471,62 @@ footer.site {
 .feature-card:hover .episode-cover,
 .feature-card:hover .article-card__cover { filter: brightness(1.12); }
 
-/* Article grid (articles.html) — visually rhymes with episode grid but uses
-   a moss-green cover with a serif "BL" monogram instead of solid plates.
-   Swap the .article-card__cover div for an <img class="article-card__cover">
-   when real cover art is available. */
+/* Article grid (articles.html) — text-only cards with a moss top rule.
+   Episodes have plates because they are audio with cover art; articles
+   are text, so the cards are text. */
 .article-grid {
   list-style: none;
   padding: 0;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2.5rem 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 2rem 1.75rem;
 }
 
 .article-card {
   display: block;
   text-decoration: none;
   color: var(--ink);
+  padding: 1.25rem 0 0;
+  border-top: 2px solid var(--moss);
+  transition: border-color 0.15s ease;
 }
 
-.article-card__cover {
-  aspect-ratio: 1 / 1;
-  background: var(--moss);
-  color: var(--paper);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-  font-family: var(--font-serif);
-  font-variation-settings: "opsz" 72;
-  font-size: clamp(2rem, 7vw, 3rem);
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  transition: filter 0.2s ease;
-}
-
-.article-card:hover .article-card__cover { filter: brightness(1.12); }
+.article-card:hover { border-top-color: var(--ink-blue); }
 .article-card:hover .article-card__title { color: var(--ink-blue); }
 
-.article-card .label { margin-bottom: 0.4rem; }
+.article-card .label { margin-bottom: 0.55rem; }
 
 .article-card__title {
   font-family: var(--font-serif);
   font-variation-settings: "opsz" 32;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 500;
   line-height: 1.25;
-  margin: 0;
+  margin: 0 0 0.55rem;
   transition: color 0.15s ease;
 }
+
+.article-card__excerpt {
+  font-family: var(--font-serif);
+  font-variation-settings: "opsz" 16;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--graphite);
+  margin: 0;
+}
+
+/* Featured article on home — same moss top rule, larger type, full width */
+.feature-card--article {
+  grid-template-columns: 1fr;
+  gap: 0;
+  border-top: 2px solid var(--moss);
+  padding-top: 1.75rem;
+  transition: border-color 0.15s ease;
+}
+
+.feature-card--article:hover { border-top-color: var(--ink-blue); }
+.feature-card--article .feature-card__body { padding-top: 0; }
 
 /* Collapse marginalia grids on narrow screens */
 @media (max-width: 38rem) {
