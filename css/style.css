@@ -294,7 +294,12 @@ header.site .brand {
 .episode-card:hover .episode-cover { filter: brightness(1.18); }
 
 /* When an episode-cover is an <img> (real cover art) rather than a div */
-img.episode-cover { object-fit: cover; display: block; }
+img.episode-cover {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
 
 /* Banner image at top of an episode post page */
 .post-header-image {
