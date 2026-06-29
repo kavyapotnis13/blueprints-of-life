@@ -292,6 +292,18 @@ header.site .brand {
 .episode-grid > li:nth-child(3n+3) .episode-cover { background: var(--ink); }
 
 .episode-card:hover .episode-cover { filter: brightness(1.18); }
+
+/* When an episode-cover is an <img> (real cover art) rather than a div */
+img.episode-cover { object-fit: cover; display: block; }
+
+/* Banner image at top of an episode post page */
+.post-header-image {
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  display: block;
+  margin: 0 0 2.5rem;
+}
 .episode-card:hover .episode-title { color: var(--ink-blue); }
 
 .episode-card .label { margin-bottom: 0.4rem; }
