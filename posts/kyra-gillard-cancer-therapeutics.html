@@ -11,17 +11,16 @@
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <div class="container">
-    <header class="site">
+  <header class="site">
+    <div class="site-inner">
       <a href="../index.html" class="brand">Blueprints of Life</a>
-      <nav>
-        <a href="../episodes.html">Episodes</a>
-        <a href="../articles.html">Articles</a>
-        <a href="../about.html">About</a>
-      </nav>
-    </header>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
 
-    <main>
+  <main class="container">
       <article>
         <span class="label">Fig. 02 — Ep 02 · 28 Jun 2026</span>
         <h1>Kyra Gillard: Cancer Therapeutics and Immunology</h1>
@@ -42,11 +41,11 @@
         <hr>
         <p><a href="../episodes.html">&larr; All episodes</a></p>
       </article>
-    </main>
+  </main>
 
-    <footer class="site">
-      &copy; 2026 Blueprints of Life
-    </footer>
-  </div>
+  <footer class="site">
+    <div class="site-inner">&copy; 2026 Blueprints of Life</div>
+  </footer>
+  <script src="../js/main.js" defer></script>
 </body>
 </html>

@@ -11,17 +11,16 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="container">
-    <header class="site">
+  <header class="site">
+    <div class="site-inner">
       <a href="index.html" class="brand">Blueprints of Life</a>
-      <nav>
-        <a href="episodes.html">Episodes</a>
-        <a href="articles.html">Articles</a>
-        <a href="about.html">About</a>
-      </nav>
-    </header>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
 
-    <section class="hero">
+  <section class="hero">
       <div class="hero-figure">
         <span class="bracket bracket-tl"></span>
         <span class="bracket bracket-tr"></span>
@@ -31,9 +30,9 @@
         <h1 class="hero-title">Blueprints of Life</h1>
         <p class="tagline">"Enabling greater access to science, one conversation at a time."</p>
       </div>
-    </section>
+  </section>
 
-    <main>
+  <main class="container">
       <section class="featured">
         <header class="section-head">
           <h2 class="eyebrow">Latest episode</h2>
@@ -64,11 +63,11 @@
           </div>
         </a>
       </section>
-    </main>
+  </main>
 
-    <footer class="site">
-      &copy; 2026 Blueprints of Life
-    </footer>
-  </div>
+  <footer class="site">
+    <div class="site-inner">&copy; 2026 Blueprints of Life</div>
+  </footer>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
