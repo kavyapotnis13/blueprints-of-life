@@ -305,7 +305,7 @@ img.episode-cover {
 /* Banner image at top of an episode post page */
 .post-header-image {
   width: 100%;
-  aspect-ratio: 21 / 9;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   display: block;
   margin: 0 0 2.5rem;
