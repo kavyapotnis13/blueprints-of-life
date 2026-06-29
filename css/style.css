@@ -104,12 +104,12 @@ header.site .brand {
 
 .menu-toggle:hover span { background: var(--indigo); }
 
-/* Hero — solid periwinkle with circuit-and-leaves pattern, matches the logo */
+/* Hero — brand-gradient background with diagonal DNA helices on the sides */
 .hero {
   width: 100%;
   margin: 0 0 3.5rem;
   position: relative;
-  background: var(--periwinkle);
+  background: var(--brand-gradient);
   min-height: 60vh;
   display: flex;
   align-items: center;
@@ -123,10 +123,10 @@ header.site .brand {
   position: absolute;
   inset: 0;
   background-image: url('../images/circuit.svg');
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.55;
+  opacity: 0.35;
   pointer-events: none;
 }
 
