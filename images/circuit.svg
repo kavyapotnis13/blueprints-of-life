@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <g id="leaf">
+      <path d="M 0,0 C -8,-4 -10,-14 -4,-22 C 0,-26 4,-26 8,-22 C 14,-14 12,-4 4,0 Z" fill="white"/>
+      <path d="M 1,-2 L 3,-18" stroke="#5d70b8" stroke-width="0.8" stroke-linecap="round" fill="none"/>
+    </g>
+  </defs>
+
+  <g stroke="white" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Left side traces -->
+    <path d="M 0,90 L 180,90 L 180,180 L 280,180"/>
+    <path d="M 0,360 L 240,360"/>
+    <path d="M 0,500 L 200,500 L 200,420 L 320,420"/>
+
+    <!-- Right side traces -->
+    <path d="M 1200,70 L 1000,70 L 1000,170 L 880,170"/>
+    <path d="M 1200,300 L 960,300"/>
+    <path d="M 1200,510 L 980,510 L 980,400 L 860,400"/>
+
+    <!-- Top edge -->
+    <path d="M 420,0 L 420,90"/>
+    <path d="M 780,0 L 780,110 L 720,110"/>
+
+    <!-- Bottom edge -->
+    <path d="M 460,600 L 460,500 L 520,500"/>
+    <path d="M 820,600 L 820,520"/>
+  </g>
+
+  <!-- Leaves at line endpoints -->
+  <use href="#leaf" transform="translate(280 180) rotate(-90)"/>
+  <use href="#leaf" transform="translate(240 360) rotate(-90)"/>
+  <use href="#leaf" transform="translate(320 420) rotate(-90)"/>
+  <use href="#leaf" transform="translate(880 170) rotate(90)"/>
+  <use href="#leaf" transform="translate(960 300) rotate(90)"/>
+  <use href="#leaf" transform="translate(860 400) rotate(90)"/>
+  <use href="#leaf" transform="translate(420 90) rotate(0)"/>
+  <use href="#leaf" transform="translate(720 110) rotate(90)"/>
+  <use href="#leaf" transform="translate(520 500) rotate(-90)"/>
+  <use href="#leaf" transform="translate(820 520) rotate(0)"/>
+
+  <!-- Junction dots -->
+  <circle cx="180" cy="90"  r="3" fill="white"/>
+  <circle cx="180" cy="180" r="3" fill="white"/>
+  <circle cx="1000" cy="70"  r="3" fill="white"/>
+  <circle cx="1000" cy="170" r="3" fill="white"/>
+  <circle cx="200" cy="500" r="3" fill="white"/>
+  <circle cx="200" cy="420" r="3" fill="white"/>
+  <circle cx="980" cy="510" r="3" fill="white"/>
+  <circle cx="980" cy="400" r="3" fill="white"/>
+  <circle cx="780" cy="110" r="3" fill="white"/>
+  <circle cx="460" cy="500" r="3" fill="white"/>
+</svg>

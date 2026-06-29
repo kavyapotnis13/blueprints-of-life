@@ -104,14 +104,12 @@ header.site .brand {
 
 .menu-toggle:hover span { background: var(--indigo); }
 
-/* Hero — full-bleed photo with centered figure on top */
+/* Hero — solid periwinkle with circuit-and-leaves pattern, matches the logo */
 .hero {
   width: 100%;
   margin: 0 0 3.5rem;
   position: relative;
-  background-image: url('../images/background.jpg');
-  background-size: cover;
-  background-position: center;
+  background: var(--periwinkle);
   min-height: 60vh;
   display: flex;
   align-items: center;
@@ -124,7 +122,11 @@ header.site .brand {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(15,17,30,0.025);
+  background-image: url('../images/circuit.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.5;
   pointer-events: none;
 }
 
