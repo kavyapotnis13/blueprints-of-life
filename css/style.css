@@ -104,84 +104,28 @@ header.site .brand {
 
 .menu-toggle:hover span { background: var(--indigo); }
 
-/* Hero — brand-gradient background with diagonal DNA helices on the sides */
+/* Hero — logo on paper background */
 .hero {
   width: 100%;
   margin: 0 0 3.5rem;
-  position: relative;
-  background: var(--brand-gradient);
-  min-height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  color: var(--paper);
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url('../images/circuit.svg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0.35;
-  pointer-events: none;
 }
 
 .hero-figure {
-  position: relative;
-  z-index: 1;
   max-width: 38rem;
   width: 100%;
-  padding: 4rem 2rem;
+  padding: 3rem 2rem 3.5rem;
   text-align: center;
-  color: var(--paper);
 }
 
-.hero-figure > * {
-  position: relative;
-  z-index: 1;
-}
-
-.hero-figure .label    { color: rgba(246, 243, 234, 0.78); }
-.hero-figure .hero-title { color: var(--paper); }
-.hero-figure .tagline  { color: rgba(246, 243, 234, 0.95); }
-.hero-figure .bracket  { border-color: rgba(246, 243, 234, 0.92); }
-
-.bracket {
-  position: absolute;
-  width: 22px;
-  height: 22px;
-  border: 0 solid var(--ink);
-  animation: bracket-in 0.5s ease-out both;
-}
-
-.bracket-tl { top: 0; left: 0;     border-top-width: 1px; border-left-width: 1px;  animation-delay: 0.15s; }
-.bracket-tr { top: 0; right: 0;    border-top-width: 1px; border-right-width: 1px; animation-delay: 0.30s; }
-.bracket-br { bottom: 0; right: 0; border-bottom-width: 1px; border-right-width: 1px; animation-delay: 0.45s; }
-.bracket-bl { bottom: 0; left: 0;  border-bottom-width: 1px; border-left-width: 1px;  animation-delay: 0.60s; }
-
-@keyframes bracket-in {
-  from { width: 0; height: 0; opacity: 0; }
-  to   { width: 22px; height: 22px; opacity: 1; }
-}
-
-.hero-figure .label {
-  margin-bottom: 1.75rem;
-}
-
-.hero-title {
-  font-family: var(--font-serif);
-  font-variation-settings: "opsz" 72;
-  font-weight: 500;
-  font-size: clamp(1.55rem, 5.5vw, 2.55rem);
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  margin: 0;
-  text-indent: 0.32em; /* trailing tracking pushes the line right; this offsets it for optical centering */
-  line-height: 1.15;
+.hero-logo {
+  display: block;
+  width: 100%;
+  max-width: 20rem;
+  height: auto;
+  margin: 0 auto;
 }
 
 .tagline {
@@ -676,6 +620,7 @@ body.sidebar-open { overflow: hidden; }
 }
 
 @media (max-width: 30rem) {
-  .hero { margin: 0 0 2.5rem; min-height: 50vh; }
-  .hero-figure { padding: 2.5rem 1rem; }
+  .hero { margin: 0 0 2.5rem; }
+  .hero-figure { padding: 2rem 1rem 2.5rem; }
+  .hero-logo { max-width: 15rem; }
 }
