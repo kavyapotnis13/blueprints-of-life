@@ -104,30 +104,18 @@ header.site .brand {
 
 .menu-toggle:hover span { background: var(--indigo); }
 
-/* Hero — brand-gradient background with diagonal leaf branches on the sides */
+/* Hero — Untitled design background (gradient + leaf branches baked in) */
 .hero {
   width: 100%;
   margin: 0 0 3.5rem;
   position: relative;
-  background: var(--brand-gradient);
+  background: url('../images/hero-bg.jpg') center / cover no-repeat, var(--brand-gradient);
   min-height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   color: var(--paper);
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url('../images/circuit.svg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0.35;
-  pointer-events: none;
 }
 
 .hero-figure {
