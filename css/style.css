@@ -263,7 +263,7 @@ header.site .brand {
 
 .episode-cover {
   aspect-ratio: 1 / 1;
-  background: var(--brand-gradient);
+  background: url('../images/episode-bg.png') center / cover no-repeat, var(--brand-gradient);
   color: var(--paper);
   display: flex;
   align-items: center;
