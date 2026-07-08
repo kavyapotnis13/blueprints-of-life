@@ -78,6 +78,23 @@ header.site .brand {
   color: var(--ink);
 }
 
+.header-social {
+  display: flex;
+  gap: 0.85rem;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+.header-social a {
+  display: flex;
+  align-items: center;
+  color: var(--indigo);
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.header-social a:hover { color: var(--periwinkle); transform: translateY(-1px); }
+
 /* Hamburger menu button */
 .menu-toggle {
   background: none;
@@ -586,12 +603,14 @@ body.sidebar-open { overflow: hidden; }
   letter-spacing: 0.18em;
   text-transform: uppercase;
   text-decoration: none;
-  color: var(--graphite);
+  color: var(--paper);
+  background: var(--brand-gradient);
+  padding: 0.55rem 0.95rem;
   white-space: nowrap;
-  transition: color 0.15s ease;
+  transition: filter 0.15s ease, transform 0.15s ease;
 }
 
-.all-link:hover { color: var(--indigo); }
+.all-link:hover { filter: brightness(1.15); transform: translateY(-1px); }
 
 /* Featured section on home — one per content type, full width with a horizontal card */
 .featured { margin-bottom: 4rem; }
