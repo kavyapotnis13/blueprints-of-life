@@ -770,8 +770,8 @@ body.sidebar-open { overflow: hidden; }
 @media (max-width: 30rem) {
   .hero {
     margin: 0 0 2.5rem;
-    min-height: 220px;
+    min-height: 50vh;
     background: url('../images/episode-bg.png') center / cover no-repeat;
   }
-  .hero-figure { display: none; }
+  .hero-figure { padding: 2.5rem 1rem; }
 }
