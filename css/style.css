@@ -758,7 +758,9 @@ body.sidebar-open { overflow: hidden; }
   }
   .post-list a,
   .post-list .excerpt,
-  article > * { grid-column: 1; grid-row: auto; }
+  article > *,
+  article > h1 { grid-column: 1; grid-row: auto; }
+  article > h1 { text-align: center; }
 
   .feature-card { grid-template-columns: 1fr; gap: 1.25rem; }
   .feature-card__media { width: 100%; max-width: 16rem; }
