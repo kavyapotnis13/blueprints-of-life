@@ -771,7 +771,7 @@ body.sidebar-open { overflow: hidden; }
   .hero {
     margin: 0 0 2.5rem;
     min-height: 220px;
-    background: linear-gradient(180deg, #2e3e73 0%, #5d70b8 100%);
+    background: url('../images/episode-bg.png') center / cover no-repeat;
   }
   .hero-figure { display: none; }
 }
