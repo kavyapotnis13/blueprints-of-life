@@ -313,6 +313,51 @@ img.episode-cover {
 .episode-card--placeholder:hover .episode-cover { filter: none; }
 .episode-card--placeholder:hover .episode-title { color: var(--ink); }
 
+/* Episode list — stacked layout on episodes.html: label, title, description, embed */
+.episode-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.episode-list > li { padding-bottom: 0; }
+
+.episode-list .label { margin-bottom: 0.5rem; }
+
+.episode-list h3 {
+  font-family: var(--font-serif);
+  font-variation-settings: "opsz" 32;
+  font-size: 1.55rem;
+  font-weight: 500;
+  line-height: 1.25;
+  margin: 0 0 0.85rem;
+}
+
+.episode-list h3 a {
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.episode-list h3 a:hover { color: var(--indigo); }
+
+.episode-list p {
+  color: var(--graphite);
+  margin: 0 0 1.5rem;
+  line-height: 1.6;
+  max-width: var(--reading-width);
+}
+
+.episode-list iframe {
+  width: 100%;
+  height: 232px;
+  border: 0;
+  display: block;
+}
+
 /* Article body — marginalia grid: label in gutter, body in right column */
 article {
   display: grid;
