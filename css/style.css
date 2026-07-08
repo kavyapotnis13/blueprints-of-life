@@ -664,7 +664,7 @@ body.sidebar-open { overflow: hidden; }
 }
 
 .feature-card h3 a {
-  color: inherit;
+  color: var(--ink);
   text-decoration: none;
   transition: color 0.15s ease;
 }
@@ -672,6 +672,8 @@ body.sidebar-open { overflow: hidden; }
 .feature-card h3 a:hover { color: var(--indigo); }
 .feature-card .read-link { text-decoration: none; transition: color 0.15s ease; }
 .feature-card .read-link:hover { color: var(--periwinkle); }
+
+.episode-list h3 a { color: var(--ink); }
 
 .feature-card--episode { grid-template-columns: 18rem 1fr; }
 
