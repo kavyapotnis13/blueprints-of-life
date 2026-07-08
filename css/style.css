@@ -604,7 +604,7 @@ body.sidebar-open { overflow: hidden; }
   text-transform: uppercase;
   text-decoration: none;
   color: var(--paper);
-  background: var(--brand-gradient);
+  background: url('../images/episode-bg.png') center / cover no-repeat, var(--brand-gradient);
   padding: 0.55rem 0.95rem;
   white-space: nowrap;
   transition: filter 0.15s ease, transform 0.15s ease;
