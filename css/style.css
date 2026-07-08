@@ -770,8 +770,8 @@ body.sidebar-open { overflow: hidden; }
 @media (max-width: 30rem) {
   .hero {
     margin: 0 0 2.5rem;
-    min-height: 50vh;
+    min-height: 220px;
     background: linear-gradient(180deg, #2e3e73 0%, #5d70b8 100%);
   }
-  .hero-figure { padding: 2.5rem 1rem; }
+  .hero-figure { display: none; }
 }
